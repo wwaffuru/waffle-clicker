@@ -1,0 +1,219 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 30px 15px;
+  background: #30230b;
+  color: #ffc45c;
+  font-family: 'Press Start 2P', monospace;
+  text-align: center;
+}
+
+.game {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #ffd45c;
+  font-size: 25px;
+  line-height: 1.8;
+  margin: 15px 0;
+  text-shadow: 3px 3px #59351e;
+}
+
+.subtitle {
+  font-size: 10px;
+  margin-bottom: 35px;
+  color: #e8a94c;
+}
+
+/* counter */
+
+.counter-shadow {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  max-width: 100%;
+  margin: 0 auto 30px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAABUUlEQVR4Xu3bsW3CUBhG0bhLkYoqyh5ZggkyBcMwBROwRPZAVKko0gX5SSAiBvCRfE/l8tO7cvlPL6FM1JoURNMfgikIpiCYgmAKgikIpiCYgmAKgikIpiCYgmAKgikIpiCYgmAKgikIpiCYEeSwe//Ddq3O1/48Wky3GB+b39U9guL08zqmzFFGkDnG8fui7Fud7efbiFIQREEwBcEUBFMQTEEwBcEUBFMQTEEwBcEUBFMQTEEwBcEUBFMQTEEwBcEUBFMQTEEwBcEUBFMQTEEwBcEUBFMQTEEwBcEUBFMQTEEwT0Hmfd0YLuffjeH80RXu8u5XuMtPyaOCYAqCKQimIJiCYAqCKQimIJiCYAqCKQimIJiCYAqCKQimIJiCYAqCKQimIJiCYAqCKQimIJiCYAqCKQimIJiCYAqCuQISDnR0XUQgsgAAABBkZUJHQ0YyODUxOENEQjZBOEI3RJZTf1oAAAAASUVORK5CYII=");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
+.counter {
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 99%;
+  height: 39%;
+  padding: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#waffles {
+  display: block;
+  color: #ffd45c;
+  font-size: 30px;
+  margin-bottom: 18px;
+}
+
+.counter small {
+  display: block;
+  font-size: 9px;
+  line-height: 2;
+  color: #e8b66d;
+}
+
+/* waffle button */
+
+#waffle {
+  display: block;
+  width: 260px;
+  height: 260px;
+  margin: -175px auto 35px;
+  margin-left: calc(50% - 140px);
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: default;
+  transition: none;
+}
+
+#waffle img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: transform 0.08s;
+}
+
+#waffle img.shrink {
+  transform: scale(0.88);
+}
+
+/* shop */
+
+.shop-heading {
+  margin: 35px 0 25px;
+  color: #ffd45c;
+  font-size: 17px;
+  line-height: 1.8;
+  text-shadow: 3px 3px #59351e;
+}
+
+.upgrades {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+.upgrades button {
+  min-width: 0;
+  padding: 18px 12px;
+  border: 3px solid #a96b36;
+  border-radius: 0;
+  background: #59351e;
+  color: #ffc45c;
+  font-family: 'Press Start 2P', monospace;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.12s, filter 0.12s;
+
+  clip-path: polygon(
+    3px 0,
+    calc(100% - 3px) 0,
+    calc(100% - 3px) 3px,
+    100% 3px,
+    100% calc(100% - 3px),
+    calc(100% - 3px) calc(100% - 3px),
+    calc(100% - 3px) 100%,
+    3px 100%,
+    3px calc(100% - 3px),
+    0 calc(100% - 3px),
+    0 3px,
+    3px 3px
+  );
+}
+
+.upgrades button:hover:not(:disabled) {
+  background: #69432b;
+}
+
+.upgrades button:disabled {
+  filter: grayscale(1);
+  opacity: 0.55;
+  cursor: default;
+}
+
+.upgrade-name {
+  display: block;
+  margin-bottom: 13px;
+  font-size: 11px;
+  line-height: 1.8;
+  color: #ffd45c;
+}
+
+.upgrade-cost {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 8px;
+  line-height: 1.8;
+  color: #e8b66d;
+}
+
+.upgrade-effect {
+  display: block;
+  font-size: 8px;
+  line-height: 1.8;
+  color: #c99a62;
+}
+
+/* smaller screens */
+
+@media (max-width: 500px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  h1 {
+    font-size: 17px;
+  }
+
+  .upgrades {
+    grid-template-columns: 1fr;
+  }
+
+  .counter-shadow {
+    width: 300px;
+    height: 300px;
+  }
+
+  #waffle {
+    width: 225px;
+    height: 225px;
+    margin: -175px auto 35px;
+  }
+
+  #waffles {
+    font-size: 23px;
+  }
+}

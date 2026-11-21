@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>waffle clicker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="game">
+
+  <h1>🧇 waffle clicker 🧇</h1>
+  <p class="subtitle">waffles waffles waffles</p>
+
+  <div class="counter-shadow">
+    <div class="counter">
+      <span id="waffles">0</span>
+      <small id="perClick">1 waffle per click</small>
+      <small id="perSecond">0 waffles per second</small>
+    </div>
+  </div>
+
+  <button id="waffle" aria-label="click the waffle">
+    <img draggable="false" alt="pixel waffle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAC70lEQVR4Xu3bv0ocURTH8RWCIPiPpEkh6AOELaysDD5A8Bl8gTQprS3T5AXyDJIHkKSysljyABEs0hiiEQQJJPxW7+XuyIz3LHvY3xx/n8Z1PQyT+3UmzoVdGAiVBaqzEQVhoyuEjIKQURAyCkJGQcgoCBkFIaMgZBSEjIKQURAyCkJGQcgoCBkFIaMgZBSEjIKQURAyCkKGIsjB9tI/snVp9fns1nXNXA9eAzGO3g/z9+wOP41co7gduEaKcXdzld9rWlxey6+Tec97RnE5aI0yxunJn/x+087eykQUlnmvKDM/YI3yNvXty8XDu+12323k10zzHlFmerBazSDrqy8efvLY7+u/j4KwzIcMMvr6My92m+Hb1/k107yCKIiP8pbF9BtvPR9dIcYFA895BTEuGHjOhwwCXYtQLlbCMh82SF8pCJmwQea9N9VUez4hg7DsTSWW8wkZhGlvCiznEzYIy94UWPbKQgbp+hM2mfY5ATznFcS4YOA5ryDGBQPPeQUxLhh4ziuIccHAcz5kEOhahHKxEpb5sEH6SkHIhA1Su3eUsMyHDGLZOwKm+ZBBLHtHwDQfNkjt3hFY9prAcz5kkK4/YZNpnxPAc15BjAsGnvMKYlww8JxXEOOCgee8ghgXDDznQwX5sL85eLl5/3zRtQjlYiUM87/OrwYfj8/jfByhDNJHCkImZBDAVcKyN5U8dT6IAeFuWbD8atC7vayby/GpxwzyfdS+sZg0tzae4j3/Zrgy/hryCkGQ2r0jsOw1gcd86CAXP27zP7bNtM8J4DG/sbU0/hryClGQSXP7WDSeQ0BBJvUiSLpFgEdA6/Gf/S1r2gUDz/kw/4cAPhpdc9sqFythmPeIATM/oEUZpU+8YoDLQS36FsUzBrgd2AJR8jfkPGOA68HFTkHIKAgZBSGjIGQUhIyCkFEQMgpCRkHIKAgZBSGjIGQUhIyCkFEQMgpCRkHIKAgZBSGjIGQUhIyCkFEQMgpCRkHI/AdfF6qS/N68bAAAABBkZUJHNUMzREU5QTU4RkQ0NzY4NCdglQkAAAAASUVORK5CYII=">
+  </button>
+
+  <h2 class="shop-heading">waffle shop</h2>
+
+  <div class="upgrades">
+
+    <button id="clickUpgrade" class="shopButton" onclick="buyUpgrade('click')">
+      <span class="upgrade-name">better syrup</span>
+      <span class="upgrade-cost">cost: <span id="clickCost">20</span></span>
+      <span class="upgrade-effect">+1 waffle per click</span>
+    </button>
+
+    <button id="syrupUpgrade" class="shopButton" onclick="buyUpgrade('syrup')">
+      <span class="upgrade-name">butter</span>
+      <span class="upgrade-cost">cost: <span id="syrupCost">100</span></span>
+      <span class="upgrade-effect">+5 waffles per click</span>
+    </button>
+
+    <button id="autoUpgrade" class="shopButton" onclick="buyUpgrade('auto')">
+      <span class="upgrade-name">waffle maker</span>
+      <span class="upgrade-cost">cost: <span id="autoCost">40</span></span>
+      <span class="upgrade-effect">+1 waffle per second</span>
+    </button>
+
+    <button id="bakeryUpgrade" class="shopButton" onclick="buyUpgrade('bakery')">
+      <span class="upgrade-name">waffle bakery</span>
+      <span class="upgrade-cost">cost: <span id="bakeryCost">180</span></span>
+      <span class="upgrade-effect">+5 waffles per second</span>
+    </button>
+
+    <button id="farmUpgrade" class="shopButton" onclick="buyUpgrade('farm')">
+      <span class="upgrade-name">waffle factory</span>
+      <span class="upgrade-cost">cost: <span id="farmCost">600</span></span>
+      <span class="upgrade-effect">+20 waffles per second</span>
+    </button>
+
+    <button id="goldUpgrade" class="shopButton" onclick="buyUpgrade('gold')">
+      <span class="upgrade-name">golden waffle</span>
+      <span class="upgrade-cost">cost: <span id="goldCost">2500</span></span>
+      <span class="upgrade-effect">+100 waffles per second</span>
+    </button>
+
+    <button id="chefUpgrade" class="shopButton" onclick="buyUpgrade('chef')">
+      <span class="upgrade-name">master chef</span>
+      <span class="upgrade-cost">cost: <span id="chefCost">10000</span></span>
+      <span class="upgrade-effect">+500 waffles per second</span>
+    </button>
+
+    <button id="chocolateUpgrade" class="shopButton" onclick="buyUpgrade('chocolate')">
+      <span class="upgrade-name">chocolate drizzle</span>
+      <span class="upgrade-cost">cost: <span id="chocolateCost">15000</span></span>
+      <span class="upgrade-effect">+100 waffles per click</span>
+    </button>
+
+    <button id="strawberryUpgrade" class="shopButton" onclick="buyUpgrade('strawberry')">
+      <span class="upgrade-name">strawberry topping</span>
+      <span class="upgrade-cost">cost: <span id="strawberryCost">30000</span></span>
+      <span class="upgrade-effect">+250 waffles per second</span>
+    </button>
+
+    <button id="robotUpgrade" class="shopButton" onclick="buyUpgrade('robot')">
+      <span class="upgrade-name">waffle robot</span>
+      <span class="upgrade-cost">cost: <span id="robotCost">75000</span></span>
+      <span class="upgrade-effect">+1000 waffles per second</span>
+    </button>
+
+    <button id="rainbowUpgrade" class="shopButton" onclick="buyUpgrade('rainbow')">
+      <span class="upgrade-name">rainbow waffles</span>
+      <span class="upgrade-cost">cost: <span id="rainbowCost">150000</span></span>
+      <span class="upgrade-effect">+500 waffles per click</span>
+    </button>
+
+    <button id="restaurantUpgrade" class="shopButton" onclick="buyUpgrade('restaurant')">
+      <span class="upgrade-name">waffle restaurant</span>
+      <span class="upgrade-cost">cost: <span id="restaurantCost">500000</span></span>
+      <span class="upgrade-effect">+5000 waffles per second</span>
+    </button>
+
+    <button id="galaxyUpgrade" class="shopButton" onclick="buyUpgrade('galaxy')">
+      <span class="upgrade-name">galaxy waffle</span>
+      <span class="upgrade-cost">cost: <span id="galaxyCost">2000000</span></span>
+      <span class="upgrade-effect">+20000 waffles per second</span>
+    </button>
+
+    <button id="wizardUpgrade" class="shopButton" onclick="buyUpgrade('wizard')">
+      <span class="upgrade-name">waffle wizard</span>
+      <span class="upgrade-cost">cost: <span id="wizardCost">10000000</span></span>
+      <span class="upgrade-effect">+100000 waffles per second</span>
+    </button>
+
+    <button id="universeUpgrade" class="shopButton" onclick="buyUpgrade('universe')">
+      <span class="upgrade-name">waffle universe</span>
+      <span class="upgrade-cost">cost: <span id="universeCost">50000000</span></span>
+      <span class="upgrade-effect">+500000 waffles per second</span>
+    </button>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
